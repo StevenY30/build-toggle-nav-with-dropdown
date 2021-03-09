@@ -1,56 +1,168 @@
-body{
-    background: linear-gradient(rgb(255, 105, 180),rgb(255, 186, 0));
-    font-family: 'Nunito', sans-serif;
-    color: #00263e;
+body {
+	background: linear-gradient(rgb(255, 105, 180), rgb(255, 186, 0));
+	font-family: 'Nunito', sans-serif;
+	color: #00263e;
 }
 
 
 /* ******************typography****************** */
+
 h1 a {
-    color: #00263e;
-    text-decoration: none;
+	color: #00263e;
+	text-decoration: none;
 }
 
 h1 {
-    letter-spacing: 5px;
+	letter-spacing: 5px;
 }
 
 h1::first-letter {
-    color: rgb(255, 105, 180);
+	color: rgb(255, 105, 180);
 }
 
-h2{
-    font-size: 3rem;
-    color: #fff;
-    text-align: center;
+h2 {
+	font-size: 3rem;
+	color: #fff;
+	text-align: center;
 }
 
 
 /* ******************header styles****************** */
-header{
-    background-color: #fff;
+
+header {
+	background-color: #fff;
+}
+
+header .flex-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+header a svg {
+	width: 15px;
+	height: 15px;
 }
 
 
-header .flex-container{
-    display: flex;
-    justify-content: space-between;
+/* *****  Main Nav ***** */
 
+.main-menu li {
+	line-height: 85px;
+	margin: 0 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #e3eaf3;
+	white-space: nowrap;
 }
 
-.menu-icon{
-    width: 40px;
-    text-align: center;
+
+/* Stops Double Border Lines */
+
+.main-menu li:last-of-type {
+	border-bottom: none;
 }
 
-.container{
-    padding: 1rem;
+.main-menu a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #f89d70;
+	font-weight: 700;
+	display: block;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+
+.main-menu a:hover,
+.main-menu a:active {
+	background-color: #e3eaf3;
+	border-radius: 5px;
+}
+
+.dropdown-menu a {
+	color: #00263e;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.main-menu svg:first-of-type {
+	margin-right: 10px;
+}
+
+.main-menu svg:last-of-type {
+	/* this only works inside a flex container */
+	margin-left: 10px;
+}
+
+
+/* Hide / Show Dropdowns with hover effect */
+
+.dropdown-menu {
+	max-height: 0;
+	overflow: hidden;
+}
+
+.main-menu li:hover>.dropdown-menu {
+	max-height: initial;
+}
+
+.menu-icon {
+	width: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.container {
+	padding: 1rem;
+}
+
+
+/* Hide / show main menu with toggle icon */
+
+nav {
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	background-color: #fff;
+	width: 100vw;
+	transition: all 0.5s ease;
+}
+
+.show-nav {
+	max-height: 100vh;
 }
 
 @media only screen and (min-width: 1300px) {
-    .container{
-        padding: 1rem 0;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+	.container {
+		padding: 1rem 0;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.main-menu {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.dropdown-menu li {
+		border-bottom: 1px solid #e3eaf3;
+	}
+	.menu-icon {
+		visibility: hidden;
+	}
+	.main-menu ul {
+		position: absolute;
+		background-color: #fff;
+		border-radius: 5px;
+	}
+	nav {
+		position: relative;
+		display: flex;
+		flex-basis: initial;
+		max-height: 8.45vw;
+		justify-content: right;
+		overflow: visible;
+	}
+	.flex-container h1 {
+		padding-top: 1.875rem;
+	}
 }
