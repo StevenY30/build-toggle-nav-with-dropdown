@@ -143,8 +143,8 @@ nav {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.dropdown-menu li {
-		border-bottom: 1px solid #e3eaf3;
+	.main-menu li{
+		border-bottom: none;
 	}
 	.menu-icon {
 		visibility: hidden;
@@ -158,7 +158,7 @@ nav {
 		position: relative;
 		display: flex;
 		flex-basis: initial;
-		max-height: 8.45vw;
+		max-height: 100vh;
 		justify-content: right;
 		overflow: visible;
 	}
